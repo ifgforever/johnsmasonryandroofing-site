@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>John's Masonry and Roofing — Commercial Roofing Services Chicago</title>
+    <link rel="icon" type="image/png" href="favicontommy.png">
+
+    <meta name="description"
+        content="Professional commercial roofing services in Chicago & the South Suburbs. Flat roofs, TPO, EPDM, maintenance plans, and emergency repairs for businesses." />
+    <meta name="keywords"
+        content="commercial roofing Chicago, flat roof repair, TPO roofing, EPDM roofing, commercial roof maintenance, business roofing South Suburbs, industrial roofing" />
+    <meta name="theme-color" content="#1f2937" />
+
+    <meta property="og:title" content="John's Masonry and Roofing — Commercial Roofing Services Chicago" />
+    <meta property="og:description"
+        content="Reliable commercial roofing for Chicago businesses. Flat roofs, maintenance plans, and emergency repairs." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="John's Masonry and Roofing" />
+
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "John's Masonry and Roofing",
+    "url": "https://johnsmasonryandroofing.com",
+    "telephone": "312.485.3837",
+    "email": "info@johnsmasonryandroofing.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Chicago",
+      "addressRegion": "IL",
+      "addressCountry": "US"
+    },
+    "areaServed": [
+      "Chicago",
+      "Oak Lawn",
+      "Tinley Park",
+      "Orland Park",
+      "Blue Island",
+      "Harvey",
+      "South Holland",
+      "Markham"
+    ],
+    "description": "Commercial roofing services for Chicago businesses — flat roofs, TPO, EPDM, maintenance plans, and emergency repairs."
+  }
+  </script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0f1724;
+            --panel: #111827;
+            --accent: #d97706;
+            --muted: #9ca3af;
+            --white: #ffffff;
+            --card: #0b1220;
+            --maxw: 1100px;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            font-family: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            background: linear-gradient(180deg, #071020 0%, #071726 45%, #0b1220 100%);
+            color: var(--white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.45;
+        }
+
+        .wrap {
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 28px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 0
+        }
+
+        .brand {
+            display: flex;
+            gap: 12px;
+            align-items: center
+        }
+
+        .logo {
+            width: 56px;
+            height: 56px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #111827, #1f2937);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--accent);
+            font-family: Montserrat;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, .6);
+        }
+
+        .brand h1 {
+            font-family: Montserrat;
+            margin: 0;
+            font-size: 18px;
+            letter-spacing: .5px
+        }
+
+        .nav-link {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 16px;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--accent);
+        }
+
+        .phone {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            font-size: 14px;
+        }
+
+        .phone a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--accent), #f59e0b);
+            padding: 8px 14px;
+            border-radius: 8px;
+            color: #08101a;
+            box-shadow: 0 8px 24px rgba(217, 119, 6, .12);
+            font-family: Montserrat;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 28px;
+            align-items: center;
+            padding: 28px 0
+        }
+
+        .hero-left h2 {
+            font-family: Montserrat;
+            font-size: 34px;
+            margin: 0 0 10px;
+            color: var(--white);
+        }
+
+        .hero-left p {
+            color: var(--muted);
+            margin: 0 0 18px;
+            font-size: 16px
+        }
+
+        .ctas {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 14px 20px;
+            border-radius: 10px;
+            font-weight: 700;
+            text-decoration: none;
+            background: linear-gradient(90deg, var(--accent), #f59e0b);
+            color: #08101a;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, .45);
+            font-family: Montserrat;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-ghost {
+            padding: 12px 18px;
+            border-radius: 10px;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, .08);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .hero-right {
+            background: linear-gradient(180deg, rgba(255, 255, 255, .02), rgba(0, 0, 0, .02));
+            border: 1px solid rgba(255, 255, 255, .04);
+            padding: 18px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, .6);
+        }
+
+        form .field {
+            margin-bottom: 12px
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, .06);
+            background: rgba(255, 255, 255, .02);
+            color: var(--white);
+            font-size: 14px;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: rgba(255, 255, 255, .4)
+        }
+
+        .small {
+            font-size: 13px;
+            color: var(--muted);
+            margin-top: 6px
+        }
+
+        .trust {
+            display: flex;
+            gap: 12px;
+            margin: 18px 0;
+            flex-wrap: wrap
+        }
+
+        .trust .badge {
+            background: var(--card);
+            padding: 12px;
+            border-radius: 10px;
+            flex: 1;
+            min-width: 150px;
+            text-align: center
+        }
+
+        .trust .badge h3 {
+            margin: 0;
+            font-size: 16px;
+            color: var(--accent);
+            font-family: Montserrat
+        }
+
+        .trust .badge p {
+            margin: 6px 0 0;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin: 28px 0;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, .02);
+            border: 1px solid rgba(255, 255, 255, .04);
+            padding: 20px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            background: rgba(255, 255, 255, .04);
+            border-color: rgba(217, 119, 6, .3);
+        }
+
+        .service-card h3 {
+            font-family: Montserrat;
+            color: var(--accent);
+            margin: 0 0 8px;
+            font-size: 18px;
+        }
+
+        .service-card p {
+            color: var(--muted);
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .service-card ul {
+            margin: 12px 0 0;
+            padding-left: 20px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .service-card li {
+            margin-bottom: 6px;
+        }
+
+        .why-us {
+            background: rgba(255, 255, 255, .02);
+            border: 1px solid rgba(255, 255, 255, .04);
+            padding: 24px;
+            border-radius: 12px;
+            margin: 28px 0;
+        }
+
+        .why-us h3 {
+            font-family: Montserrat;
+            color: var(--accent);
+            margin: 0 0 16px;
+            font-size: 22px;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+        }
+
+        .feature {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .feature-icon {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            color: var(--accent);
+        }
+
+        .feature-text h4 {
+            margin: 0 0 4px;
+            font-size: 16px;
+            color: var(--white);
+            font-family: Montserrat;
+        }
+
+        .feature-text p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        footer {
+            margin: 40px 0 20px;
+            color: var(--muted);
+            font-size: 14px;
+            text-align: center
+        }
+
+        .callbar {
+            display: none;
+            position: fixed;
+            left: 12px;
+            right: 12px;
+            bottom: 14px;
+            background: linear-gradient(90deg, var(--accent), #f59e0b);
+            border-radius: 12px;
+            padding: 12px;
+            box-shadow: 0 18px 40px rgba(15, 23, 42, .6);
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            z-index: 60;
+        }
+
+        .callbar a {
+            color: #08101a;
+            font-weight: 800;
+            text-decoration: none;
+            font-family: Montserrat
+        }
+
+        @media (max-width:980px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 16px
+            }
+
+            .hero-right {
+                order: 2
+            }
+
+            .hero-left {
+                order: 1
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width:720px) {
+            .wrap {
+                padding: 16px
+            }
+
+            .brand h1 {
+                font-size: 15px
+            }
+
+            .callbar {
+                display: flex
+            }
+
+            .nav-link {
+                display: none;
+            }
+
+            .feature-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <div class="brand">
+                <div class="logo" aria-hidden="true">JM</div>
+                <div>
+                    <h1>John's Masonry and Roofing</h1>
+                    <div style="color:var(--muted);font-size:13px">Bold. Local. Reliable.</div>
+                </div>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <nav>
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="home.html" class="nav-link">Residential</a>
+                    <a href="masonry.html" class="nav-link">Masonry</a>
+                </nav>
+                <div class="phone">
+                    <a href="tel:3124853837">Call: 312.485.3837</a>
+                    <div style="font-size:12px;color:var(--muted);margin-top:6px">Commercial roofing experts</div>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero" aria-label="Hero">
+            <div class="hero-left">
+                <h2>Commercial Roofing Built for Chicago Business</h2>
+                <p>Protect your investment with professional commercial roofing services. From flat roof installations
+                    to ongoing maintenance plans, we keep your business covered with minimal disruption and maximum
+                    reliability.</p>
+
+                <div class="trust" role="list">
+                    <div class="badge" role="listitem">
+                        <h3>Flat Roof Specialists</h3>
+                        <p>TPO, EPDM, and modified bitumen experts.</p>
+                    </div>
+                    <div class="badge" role="listitem">
+                        <h3>Minimal Disruption</h3>
+                        <p>Work around your business hours and schedule.</p>
+                    </div>
+                    <div class="badge" role="listitem">
+                        <h3>Maintenance Plans</h3>
+                        <p>Preventive care to extend roof life and avoid costly repairs.</p>
+                    </div>
+                </div>
+
+                <div class="ctas" style="margin-top:10px">
+                    <a class="btn-primary" href="#lead-form">Request Commercial Quote</a>
+                    <a class="btn-ghost" href="tel:312.485.3837">Call Now</a>
+                </div>
+            </div>
+
+            <aside class="hero-right" aria-label="Lead form">
+                <h3 style="margin:0 0 8px;font-family:Montserrat">Get Your Free Commercial Roof Assessment</h3>
+                <p class="small">Fast response for businesses. We'll work around your schedule.</p>
+
+                <form id="lead-form" action="https://formsubmit.co/e1f0a174f6505f3be7bfeb5a65c5c7c3" method="POST"
+                    enctype="multipart/form-data">
+                    <input type="hidden" name="_subject" value="New Commercial Roofing Request">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://johnsmasonryandroofing.com/thank-you.html">
+
+                    <div class="field">
+                        <label for="business-name" class="small">Business name</label>
+                        <input id="business-name" name="business_name" type="text" required placeholder="ABC Company" />
+                    </div>
+                    <div class="field">
+                        <label for="contact-name" class="small">Contact name</label>
+                        <input id="contact-name" name="contact_name" type="text" required placeholder="John Smith" />
+                    </div>
+                    <div class="field">
+                        <label for="phone" class="small">Phone</label>
+                        <input id="phone" name="phone" type="tel" required placeholder="(312) 555-1234" />
+                    </div>
+                    <div class="field">
+                        <label for="email" class="small">Email</label>
+                        <input id="email" name="email" type="email" required placeholder="john@business.com" />
+                    </div>
+                    <div class="field">
+                        <label for="address" class="small">Business location</label>
+                        <input id="address" name="address" type="text" required
+                            placeholder="Chicago, IL or neighborhood" />
+                    </div>
+                    <div class="field">
+                        <label for="details" class="small">What do you need?</label>
+                        <textarea id="details" name="details" rows="3"
+                            placeholder="New roof, leak repair, maintenance plan..." required></textarea>
+                    </div>
+
+                    <div class="field">
+                        <label for="photos" class="small">Upload photos (optional)</label>
+                        <input id="photos" name="photos" type="file" accept="image/*" multiple />
+                    </div>
+
+                    <button type="submit" class="btn-primary" style="padding:12px 14px; width: 100%;">Request
+                        Assessment</button>
+                </form>
+            </aside>
+        </section>
+
+        <section class="services-grid">
+            <div class="service-card">
+                <h3>Flat Roof Installation</h3>
+                <p>Complete commercial flat roof systems designed for durability and weather resistance.</p>
+                <ul>
+                    <li>TPO (Thermoplastic Polyolefin)</li>
+                    <li>EPDM (Rubber roofing)</li>
+                    <li>Modified Bitumen</li>
+                    <li>Built-up roofing (BUR)</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>Roof Repair & Leak Detection</h3>
+                <p>Fast response to commercial roof issues with minimal business disruption.</p>
+                <ul>
+                    <li>Leak detection and repair</li>
+                    <li>Ponding water solutions</li>
+                    <li>Membrane repairs</li>
+                    <li>Emergency patching</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>Maintenance Programs</h3>
+                <p>Preventive maintenance plans that extend roof life and catch problems early.</p>
+                <ul>
+                    <li>Quarterly inspections</li>
+                    <li>Drain cleaning</li>
+                    <li>Minor repairs included</li>
+                    <li>Detailed reports</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>Roof Coatings</h3>
+                <p>Protective coatings that restore and extend the life of your existing roof.</p>
+                <ul>
+                    <li>Silicone coatings</li>
+                    <li>Acrylic systems</li>
+                    <li>Energy-efficient options</li>
+                    <li>Rubber roof coating</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>Storm Damage Restoration</h3>
+                <p>Complete storm damage assessment and insurance claim assistance for businesses.</p>
+                <ul>
+                    <li>Emergency tarping</li>
+                    <li>Documentation for insurance</li>
+                    <li>Work with adjusters</li>
+                    <li>Fast repair timelines</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>Gutter & Drainage Systems</h3>
+                <p>Commercial gutter installation and repair to protect your building foundation.</p>
+                <ul>
+                    <li>Internal drain systems</li>
+                    <li>Scupper installation</li>
+                    <li>Gutter guards</li>
+                    <li>Downspout repairs</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="why-us">
+            <h3>Why Chicago Businesses Choose John's Roofing</h3>
+            <div class="feature-list">
+                <div class="feature">
+                    <svg class="feature-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <div class="feature-text">
+                        <h4>Licensed & Insured</h4>
+                        <p>Fully licensed commercial contractors with comprehensive liability coverage.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <svg class="feature-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <div class="feature-text">
+                        <h4>Flexible Scheduling</h4>
+                        <p>We work nights, weekends, or around your business hours to minimize disruption.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <svg class="feature-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    <div class="feature-text">
+                        <h4>Detailed Documentation</h4>
+                        <p>Photo reports, warranties, and maintenance records for your facility management.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <svg class="feature-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <div class="feature-text">
+                        <h4>Transparent Pricing</h4>Detailed quotes with no hidden fees. Insurance claim assistance for
+                        qualifying projects.
+                        <p></p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <svg class="feature-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    <div class="feature-text">
+                        <h4>Emergency Response</h4>
+                        <p>24/7 emergency service for urgent leaks and storm damage.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <svg class="feature-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <div class="feature-text">
+                        <h4>Local Team</h4>
+                        <p>Chicago-based crews who understand local building codes and weather challenges.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div
+            style="background: rgba(217, 119, 6, 0.08); border: 1px solid rgba(217, 119, 6, 0.2); padding: 20px; border-radius: 12px; margin: 28px 0; text-align: center;">
+            <h3 style="font-family: Montserrat; color: var(--accent); margin: 0 0 8px;">Industries We Serve</h3>
+            <p style="color: var(--muted); margin: 0; font-size: 14px;">
+                Retail stores • Office buildings • Warehouses • Restaurants • Medical facilities • Apartment complexes •
+                Industrial facilities • Schools • Churches
+            </p>
+        </div>
+
+        <footer>
+            <div style="margin-bottom:8px">© <span id="year"></span> John's Masonry and Roofing — Serving Chicago & the
+                South Suburbs</div>
+            <div style="font-size:13px;color:var(--muted)">Licensed. Insured. Family-owned.</div>
+        </footer>
+    </div>
+
+    <div class="callbar" role="region" aria-label="Call now bar">
+        <div style="font-weight:800">Commercial Roofing</div>
+        <a href="tel:3124853837">Call: 312.485.3837</a>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

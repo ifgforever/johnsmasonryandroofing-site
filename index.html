@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Welcome — John's Masonry and Roofing</title>
+
+    <link rel="icon" type="image/png" href="favicontommy.png">
+
+    <meta name="description"
+        content="Chicago's trusted local experts for roofing, masonry, and tuckpointing. Choose your service to get started." />
+
+    <!-- Font performance tweaks -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-dark: #0f1724;
+            --accent: #d97706;
+            --white: #fff;
+            --muted: #9ca3af;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Open Sans", sans-serif;
+            color: var(--white);
+            background:
+                linear-gradient(180deg, #071020 0%, #101726 45%, #0b1220 100%),
+                url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            background-blend-mode: overlay;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding: 16px;
+            overflow-x: hidden;
+        }
+
+        body.gallery-active {
+            overflow-y: auto;
+        }
+
+        main {
+            width: 100%;
+            transition: opacity 0.5s ease;
+        }
+
+        main.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        h1 {
+            font-family: "Montserrat", sans-serif;
+            font-size: 26px;
+            letter-spacing: 0.5px;
+            color: var(--white);
+            margin: 0;
+        }
+
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+        }
+
+        .modal.active {
+            display: flex;
+            animation: fadeIn 0.6s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .modal-content {
+            background: rgba(15, 23, 36, 0.96);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 32px 24px;
+            max-width: 480px;
+            width: 90%;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, .6);
+        }
+
+        .modal-content h2 {
+            font-family: "Montserrat", sans-serif;
+            color: var(--accent);
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 22px;
+        }
+
+        .modal-content p {
+            color: var(--muted);
+            margin: 0 0 20px;
+            font-size: 14px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        a.btn {
+            display: block;
+            text-decoration: none;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 700;
+            padding: 14px;
+            border-radius: 10px;
+            transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+            font-size: 14px;
+        }
+
+        a.btn.roof {
+            background: linear-gradient(90deg, var(--accent), #f59e0b);
+            color: #08101a;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+        }
+
+        a.btn.commercial {
+            background: linear-gradient(90deg, #0ea5e9, #06b6d4);
+            color: #08101a;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+        }
+
+        a.btn.masonry {
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            background: transparent;
+        }
+
+        a.btn:hover {
+            transform: scale(1.03);
+        }
+
+        .modal-close {
+            margin-top: 6px;
+            background: none;
+            border: none;
+            color: var(--muted);
+            font-size: 12px;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .modal-close:hover {
+            text-decoration: underline;
+            color: var(--accent);
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(180deg, #071020 0%, #071726 45%, #0b1220 100%);
+            z-index: 50;
+            overflow-y: auto;
+            padding: 80px 20px 40px;
+        }
+
+        .gallery-section.active {
+            display: block;
+            animation: fadeIn 0.6s ease;
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .gallery-header h2 {
+            font-family: "Montserrat", sans-serif;
+            font-size: 32px;
+            color: var(--white);
+            margin: 0 0 12px;
+        }
+
+        .gallery-header p {
+            color: var(--muted);
+            font-size: 16px;
+            margin: 0 0 20px;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            z-index: 60;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(-2px);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            aspect-ratio: 4/3;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: 16px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay-text {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--white);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 200;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .lightbox.active {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .lightbox-content {
+            max-width: 90vw;
+            max-height: 90vh;
+            position: relative;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: 8px;
+            display: block;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 32px;
+            cursor: pointer;
+            padding: 5px 10px;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            color: var(--muted);
+            font-size: 13px;
+            text-align: center;
+            padding: 0 12px;
+        }
+
+        .gallery-section footer {
+            position: relative;
+            margin-top: 60px;
+            transform: none;
+            left: auto;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 20px;
+            }
+
+            .modal-content {
+                padding: 24px 16px;
+            }
+
+            footer {
+                font-size: 12px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-header h2 {
+                font-size: 24px;
+            }
+
+            .gallery-section {
+                padding: 60px 16px 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main id="mainContent" aria-labelledby="page-title">
+        <h1 id="page-title">Welcome to John's Masonry and Roofing</h1>
+    </main>
+
+    <div class="modal" id="serviceModal" role="dialog" aria-modal="true" aria-labelledby="serviceTitle"
+        aria-describedby="serviceDesc">
+        <div class="modal-content">
+            <h2 id="serviceTitle">What type of service are you looking for?</h2>
+            <p id="serviceDesc">Select one to get started:</p>
+            <div class="buttons">
+                <a href="home.html" class="btn roof">Residential Roofing</a>
+                <a href="commercial.html" class="btn commercial">Commercial Roofing</a>
+                <a href="masonry.html" class="btn masonry">Masonry &amp; Tuckpointing</a>
+            </div>
+            <button type="button" class="modal-close" id="modalClose">
+                Not sure yet? Browse our work.
+            </button>
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <div class="gallery-section" id="gallerySection">
+        <button class="back-btn" id="backBtn">← Back to Services</button>
+
+        <div class="gallery-header">
+            <h2>Our Work</h2>
+            <p>Quality craftsmanship across Chicago & the South Suburbs</p>
+        </div>
+
+        <div class="gallery-grid">
+            <!-- Cement/Concrete Work -->
+            <div class="gallery-item" data-img="assets/cement1.png">
+                <img src="assets/cement1.png" alt="Commercial concrete work">
+                <div class="overlay">
+                    <span class="overlay-text">Commercial Concrete Work</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-img="assets/cement2.png">
+                <img src="assets/cement2.png" alt="Residential driveway pour">
+                <div class="overlay">
+                    <span class="overlay-text">Residential driveway pour</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-img="assets/cement3.png">
+                <img src="assets/cement3.png" alt="Concrete porch work">
+                <div class="overlay">
+                    <span class="overlay-text">Porch Concrete Work</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-img="assets/cement4.png">
+                <img src="assets/cement4.png" alt="Concrete cutting">
+                <div class="overlay">
+                    <span class="overlay-text">Professional Concrete Cutting</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-img="assets/cement5.png">
+                <img src="assets/cement5.png" alt="Sidewalk installation">
+                <div class="overlay">
+                    <span class="overlay-text">New Sidewalk Installation</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-img="assets/cement6.png">
+                <img src="assets/cement6.png" alt="Residential Driveway">
+                <div class="overlay">
+                    <span class="overlay-text">Residential Driveway Expansion</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-img="assets/cement7.png">
+                <img src="assets/cement7.png" alt="Concrete repair">
+                <div class="overlay">
+                    <span class="overlay-text">Concrete Repair Services</span>
+                </div>
+            </div>
+
+
+
+            <!-- Commercial Roofing -->
+            <div class="gallery-item" data-img="assets/commercial1.png">
+                <img src="assets/commercial1.png" alt="Commercial flat roof">
+                <div class="overlay">
+                    <span class="overlay-text">Commercial Flat Roof Installation</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-img="assets/commercial2.png">
+                <img src="assets/commercial2.png" alt="Commercial roof coating">
+                <div class="overlay">
+                    <span class="overlay-text">Commercial Roof Waterproofing</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-img="assets/commercial3.png">
+                <img src="assets/commercial3.png" alt="TPO roofing installation">
+                <div class="overlay">
+                    <span class="overlay-text">TPO Roofing System</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-img="assets/commercial4.png">
+                <img src="assets/commercial4.png" alt="Commercial roof repair">
+                <div class="overlay">
+                    <span class="overlay-text">Commercial Roof Repair</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-img="assets/commercial5.png">
+                <img src="assets/commercial5.png" alt="Flat roof maintenance">
+                <div class="overlay">
+                    <span class="overlay-text">Flat Roof Maintenance</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-img="assets/commercial6.png">
+                <img src="assets/commercial6.png" alt="Commercial roofing project">
+                <div class="overlay">
+                    <span class="overlay-text">Large-Scale Commercial Project</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-img="assets/commercial7.png">
+                <img src="assets/commercial7.png" alt="Flat roof installation">
+                <div class="overlay">
+                    <span class="overlay-text">Commercial Flat Roof System</span>
+                </div>
+            </div>
+
+            <!-- Masonry Work -->
+            <div class="gallery-item" data-img="assets/masonry1.png">
+                <img src="assets/bricktuckpointing1.png" alt="Masonry foundation work">
+                <div class="overlay">
+                    <span class="overlay-text">Masonry Foundation Repair</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-img="assets/masonry2.png">
+                <img src="assets/chimney1.png" alt="Chimney masonry work">
+                <div class="overlay">
+                    <span class="overlay-text">Chimney Masonry Work</span>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            © <span id="galleryYear"></span> John's Masonry and Roofing — Serving Chicago &amp; the South Suburbs
+        </footer>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose">&times;</button>
+            <img id="lightboxImg" src="" alt="Full size image">
+        </div>
+    </div>
+
+    <footer>
+        © <span id="year"></span> John's Masonry and Roofing — Serving Chicago &amp; the South Suburbs
+    </footer>
+
+    <script>
+        // Dynamic year
+        document.getElementById('year').textContent = new Date().getFullYear();
+        document.getElementById('galleryYear').textContent = new Date().getFullYear();
+
+        const modal = document.getElementById('serviceModal');
+        const closeBtn = document.getElementById('modalClose');
+        const gallerySection = document.getElementById('gallerySection');
+        const mainContent = document.getElementById('mainContent');
+        const backBtn = document.getElementById('backBtn');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxClose = document.getElementById('lightboxClose');
+
+        // Show modal after 1.5 seconds
+        setTimeout(() => {
+            modal.classList.add('active');
+        }, 1500);
+
+        // Show gallery when "Browse our work" is clicked
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+            mainContent.classList.add('hidden');
+            gallerySection.classList.add('active');
+            document.body.classList.add('gallery-active');
+        });
+
+        // Back to services button
+        backBtn.addEventListener('click', () => {
+            gallerySection.classList.remove('active');
+            mainContent.classList.remove('hidden');
+            document.body.classList.remove('gallery-active');
+            setTimeout(() => {
+                modal.classList.add('active');
+            }, 300);
+        });
+
+        // Gallery item click - open lightbox
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.dataset.img;
+                lightboxImg.src = imgSrc;
+                lightbox.classList.add('active');
+            });
+        });
+
+        // Close lightbox
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        // Close lightbox on background click
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+            }
+        });
+
+        // Close lightbox on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                lightbox.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+
+</html>
