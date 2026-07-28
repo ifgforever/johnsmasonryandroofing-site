@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Thank You — John's Masonry and Roofing</title>
+    <link rel="icon" type="image/png" href="favicontommy.png">
+    <meta name="description" content="Thank you for contacting John's Masonry and Roofing. We'll get back to you as soon as possible." />
+    <meta name="theme-color" content="#1f2937" />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0f1724;
+            --accent: #d97706;
+            --muted: #9ca3af;
+            --white: #ffffff;
+            --maxw: 700px;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: "Open Sans", system-ui, sans-serif;
+            background: linear-gradient(180deg, #071020 0%, #071726 45%, #0b1220 100%);
+            color: var(--white);
+            line-height: 1.5;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wrap {
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 40px 28px;
+            text-align: center;
+        }
+
+        .logo {
+            width: 64px;
+            height: 64px;
+            border-radius: 8px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #111827, #1f2937);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Montserrat;
+            font-weight: 700;
+            color: var(--accent);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, .6);
+        }
+
+        h1 {
+            font-family: Montserrat;
+            font-size: 30px;
+            margin: 0 0 16px;
+            color: var(--accent);
+        }
+
+        p {
+            color: var(--muted);
+            font-size: 16px;
+            margin: 0 0 12px;
+        }
+
+        .ctas {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 26px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, var(--accent), #f59e0b);
+            color: #08101a;
+            padding: 14px 22px;
+            border-radius: 10px;
+            font-weight: 700;
+            text-decoration: none;
+            font-family: Montserrat;
+        }
+
+        .btn-ghost {
+            border: 2px solid rgba(255, 255, 255, .08);
+            color: var(--white);
+            padding: 12px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer {
+            margin-top: 36px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="logo">JM</div>
+        <h1>Thank You!</h1>
+        <p>Your request has been received. A member of the John's Masonry and Roofing team will reach out soon to schedule your inspection or estimate.</p>
+        <p>Need immediate help? Call us now.</p>
+
+        <div class="ctas">
+            <a class="btn-primary" href="tel:3124853837">Call: 312.485.3837</a>
+            <a class="btn-ghost" href="index.html">Back to Home</a>
+        </div>
+
+        <footer>© <span id="year"></span> John's Masonry and Roofing — Serving Chicago & the South Suburbs</footer>
+    </div>
+
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+
+</html>
