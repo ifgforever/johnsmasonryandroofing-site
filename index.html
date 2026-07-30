@@ -367,6 +367,9 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="/accessibility.css?v=20260730">
+    <script src="/accessibility.js?v=20260730" defer></script>
+    <script src="/languages.js?v=20260730" defer></script>
 </head>
 
 <body>
@@ -375,7 +378,7 @@
     </main>
 
     <div class="modal" id="serviceModal" role="dialog" aria-modal="true" aria-labelledby="serviceTitle"
-        aria-describedby="serviceDesc">
+        aria-describedby="serviceDesc" inert>
         <div class="modal-content">
             <h2 id="serviceTitle">What type of service are you looking for?</h2>
             <p id="serviceDesc">Select one to get started:</p>
@@ -391,60 +394,60 @@
     </div>
 
     <!-- Gallery Section -->
-    <div class="gallery-section" id="gallerySection">
-        <button class="back-btn" id="backBtn">← Back to Services</button>
+    <div class="gallery-section" id="gallerySection" role="region" aria-labelledby="gallery-heading" tabindex="-1" inert>
+        <button type="button" class="back-btn" id="backBtn">← Back to Services</button>
 
         <div class="gallery-header">
-            <h2>Our Work</h2>
+            <h2 id="gallery-heading">Our Work</h2>
             <p>Quality craftsmanship across Chicago & the South Suburbs</p>
         </div>
 
         <div class="gallery-grid">
             <!-- Cement/Concrete Work -->
-            <div class="gallery-item" data-img="assets/cement1.png">
-                <img src="assets/cement1.png" alt="Commercial concrete work">
+            <div class="gallery-item" data-img="assets/cement1.webp">
+                <img data-src="assets/cement1.webp" alt="Commercial concrete work" loading="lazy">
                 <div class="overlay">
                     <span class="overlay-text">Commercial Concrete Work</span>
                 </div>
             </div>
 
-            <div class="gallery-item" data-img="assets/cement2.png">
-                <img src="assets/cement2.png" alt="Residential driveway pour">
+            <div class="gallery-item" data-img="assets/cement2.webp">
+                <img data-src="assets/cement2.webp" alt="Residential driveway pour" loading="lazy">
                 <div class="overlay">
                     <span class="overlay-text">Residential driveway pour</span>
                 </div>
             </div>
 
-            <div class="gallery-item" data-img="assets/cement3.png">
-                <img src="assets/cement3.png" alt="Concrete porch work">
+            <div class="gallery-item" data-img="assets/cement3.webp">
+                <img data-src="assets/cement3.webp" alt="Concrete porch work" loading="lazy">
                 <div class="overlay">
                     <span class="overlay-text">Porch Concrete Work</span>
                 </div>
             </div>
 
-            <div class="gallery-item" data-img="assets/cement4.png">
-                <img src="assets/cement4.png" alt="Concrete cutting">
+            <div class="gallery-item" data-img="assets/cement4.webp">
+                <img data-src="assets/cement4.webp" alt="Concrete cutting" loading="lazy">
                 <div class="overlay">
                     <span class="overlay-text">Professional Concrete Cutting</span>
                 </div>
             </div>
 
-            <div class="gallery-item" data-img="assets/cement5.png">
-                <img src="assets/cement5.png" alt="Sidewalk installation">
+            <div class="gallery-item" data-img="assets/cement5.webp">
+                <img data-src="assets/cement5.webp" alt="Sidewalk installation" loading="lazy">
                 <div class="overlay">
                     <span class="overlay-text">New Sidewalk Installation</span>
                 </div>
             </div>
 
-            <div class="gallery-item" data-img="assets/cement6.png">
-                <img src="assets/cement6.png" alt="Residential Driveway">
+            <div class="gallery-item" data-img="assets/cement6.webp">
+                <img data-src="assets/cement6.webp" alt="Residential Driveway" loading="lazy">
                 <div class="overlay">
                     <span class="overlay-text">Residential Driveway Expansion</span>
                 </div>
             </div>
 
-            <div class="gallery-item" data-img="assets/cement7.png">
-                <img src="assets/cement7.png" alt="Concrete repair">
+            <div class="gallery-item" data-img="assets/cement7.webp">
+                <img data-src="assets/cement7.webp" alt="Concrete repair" loading="lazy">
                 <div class="overlay">
                     <span class="overlay-text">Concrete Repair Services</span>
                 </div>
@@ -453,65 +456,65 @@
 
 
             <!-- Commercial Roofing -->
-            <div class="gallery-item" data-img="assets/commercial1.png">
-                <img src="assets/commercial1.png" alt="Commercial flat roof">
+            <div class="gallery-item" data-img="assets/commercial1.webp">
+                <img data-src="assets/commercial1.webp" alt="Commercial flat roof" loading="lazy">
                 <div class="overlay">
                     <span class="overlay-text">Commercial Flat Roof Installation</span>
                 </div>
             </div>
 
-            <div class="gallery-item" data-img="assets/commercial2.png">
-                <img src="assets/commercial2.png" alt="Commercial roof coating">
+            <div class="gallery-item" data-img="assets/commercial2.webp">
+                <img data-src="assets/commercial2.webp" alt="Commercial roof coating" loading="lazy">
                 <div class="overlay">
                     <span class="overlay-text">Commercial Roof Waterproofing</span>
                 </div>
             </div>
 
-            <div class="gallery-item" data-img="assets/commercial3.png">
-                <img src="assets/commercial3.png" alt="TPO roofing installation">
+            <div class="gallery-item" data-img="assets/commercial3.webp">
+                <img data-src="assets/commercial3.webp" alt="TPO roofing installation" loading="lazy">
                 <div class="overlay">
                     <span class="overlay-text">TPO Roofing System</span>
                 </div>
             </div>
 
-            <div class="gallery-item" data-img="assets/commercial4.png">
-                <img src="assets/commercial4.png" alt="Commercial roof repair">
+            <div class="gallery-item" data-img="assets/commercial4.webp">
+                <img data-src="assets/commercial4.webp" alt="Commercial roof repair" loading="lazy">
                 <div class="overlay">
                     <span class="overlay-text">Commercial Roof Repair</span>
                 </div>
             </div>
 
-            <div class="gallery-item" data-img="assets/commercial5.png">
-                <img src="assets/commercial5.png" alt="Flat roof maintenance">
+            <div class="gallery-item" data-img="assets/commercial5.webp">
+                <img data-src="assets/commercial5.webp" alt="Flat roof maintenance" loading="lazy">
                 <div class="overlay">
                     <span class="overlay-text">Flat Roof Maintenance</span>
                 </div>
             </div>
 
-            <div class="gallery-item" data-img="assets/commercial6.png">
-                <img src="assets/commercial6.png" alt="Commercial roofing project">
+            <div class="gallery-item" data-img="assets/commercial6.webp">
+                <img data-src="assets/commercial6.webp" alt="Commercial roofing project" loading="lazy">
                 <div class="overlay">
                     <span class="overlay-text">Large-Scale Commercial Project</span>
                 </div>
             </div>
 
-            <div class="gallery-item" data-img="assets/commercial7.png">
-                <img src="assets/commercial7.png" alt="Flat roof installation">
+            <div class="gallery-item" data-img="assets/commercial7.webp">
+                <img data-src="assets/commercial7.webp" alt="Flat roof installation" loading="lazy">
                 <div class="overlay">
                     <span class="overlay-text">Commercial Flat Roof System</span>
                 </div>
             </div>
 
             <!-- Masonry Work -->
-            <div class="gallery-item" data-img="assets/masonry1.png">
-                <img src="assets/bricktuckpointing1.png" alt="Masonry foundation work">
+            <div class="gallery-item" data-img="assets/bricktuckpointing1.webp">
+                <img data-src="assets/bricktuckpointing1.webp" alt="Masonry foundation work" loading="lazy">
                 <div class="overlay">
                     <span class="overlay-text">Masonry Foundation Repair</span>
                 </div>
             </div>
 
-            <div class="gallery-item" data-img="assets/masonry2.png">
-                <img src="assets/chimney1.png" alt="Chimney masonry work">
+            <div class="gallery-item" data-img="assets/chimney1.webp">
+                <img data-src="assets/chimney1.webp" alt="Chimney masonry work" loading="lazy">
                 <div class="overlay">
                     <span class="overlay-text">Chimney Masonry Work</span>
                 </div>
@@ -546,10 +549,14 @@
     </div>
 
     <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true"
+        aria-label="Enlarged project photo" inert>
         <div class="lightbox-content">
-            <button class="lightbox-close" id="lightboxClose">&times;</button>
-            <img id="lightboxImg" src="" alt="Full size image">
+            <button type="button" class="lightbox-close" id="lightboxClose"
+                aria-label="Close enlarged project photo">&times;</button>
+            <img id="lightboxImg"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                alt="">
         </div>
     </div>
 
@@ -572,55 +579,137 @@
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightboxImg');
         const lightboxClose = document.getElementById('lightboxClose');
+        const serviceLinks = [...modal.querySelectorAll('a, button')];
+        const galleryItems = [...document.querySelectorAll('.gallery-item')];
+        let lightboxReturnFocus = null;
 
-        // Show modal after 1.5 seconds
-        setTimeout(() => {
+        function showServiceModal() {
+            modal.removeAttribute('inert');
             modal.classList.add('active');
-        }, 1500);
+            mainContent.setAttribute('inert', '');
+            serviceLinks[0]?.focus();
+        }
 
-        // Show gallery when "Browse our work" is clicked
-        closeBtn.addEventListener('click', () => {
+        function hideServiceModal() {
             modal.classList.remove('active');
+            modal.setAttribute('inert', '');
+            mainContent.removeAttribute('inert');
+        }
+
+        function loadGalleryImages() {
+            gallerySection.querySelectorAll('img[data-src]').forEach(image => {
+                if (!image.src) image.src = image.dataset.src;
+            });
+        }
+
+        function showGallery() {
+            hideServiceModal();
             mainContent.classList.add('hidden');
+            mainContent.setAttribute('inert', '');
+            gallerySection.removeAttribute('inert');
             gallerySection.classList.add('active');
             document.body.classList.add('gallery-active');
-        });
+            loadGalleryImages();
+            backBtn.focus();
+        }
+
+        function hideGallery() {
+            gallerySection.classList.remove('active');
+            gallerySection.setAttribute('inert', '');
+            mainContent.classList.remove('hidden');
+            mainContent.removeAttribute('inert');
+            document.body.classList.remove('gallery-active');
+        }
+
+        function openLightbox(item) {
+            lightboxReturnFocus = document.activeElement;
+            const preview = item.querySelector('img');
+            lightboxImg.src = item.dataset.img;
+            lightboxImg.alt = preview?.alt || 'Completed project';
+            gallerySection.setAttribute('inert', '');
+            lightbox.removeAttribute('inert');
+            lightbox.classList.add('active');
+            lightboxClose.focus();
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            lightbox.setAttribute('inert', '');
+            gallerySection.removeAttribute('inert');
+            lightboxImg.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
+            if (lightboxReturnFocus && typeof lightboxReturnFocus.focus === 'function') {
+                lightboxReturnFocus.focus();
+            }
+        }
+
+        // Show modal after 1.5 seconds
+        setTimeout(showServiceModal, 1500);
+
+        // Show gallery when "Browse our work" is clicked
+        closeBtn.addEventListener('click', showGallery);
 
         // Back to services button
         backBtn.addEventListener('click', () => {
-            gallerySection.classList.remove('active');
-            mainContent.classList.remove('hidden');
-            document.body.classList.remove('gallery-active');
-            setTimeout(() => {
-                modal.classList.add('active');
-            }, 300);
+            hideGallery();
+            setTimeout(showServiceModal, 300);
         });
 
-        // Gallery item click - open lightbox
-        document.querySelectorAll('.gallery-item').forEach(item => {
-            item.addEventListener('click', () => {
-                const imgSrc = item.dataset.img;
-                lightboxImg.src = imgSrc;
-                lightbox.classList.add('active');
+        // Gallery cards work with pointer, keyboard, and screen readers.
+        galleryItems.forEach(item => {
+            const preview = item.querySelector('img');
+            const caption = item.querySelector('.overlay-text')?.textContent?.trim();
+            item.setAttribute('role', 'button');
+            item.setAttribute('tabindex', '0');
+            item.setAttribute('aria-label', `View full image: ${caption || preview?.alt || 'completed project'}`);
+            item.addEventListener('click', () => openLightbox(item));
+            item.addEventListener('keydown', event => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    openLightbox(item);
+                }
             });
         });
 
         // Close lightbox
-        lightboxClose.addEventListener('click', () => {
-            lightbox.classList.remove('active');
-        });
+        lightboxClose.addEventListener('click', closeLightbox);
 
         // Close lightbox on background click
         lightbox.addEventListener('click', (e) => {
             if (e.target === lightbox) {
-                lightbox.classList.remove('active');
+                closeLightbox();
             }
         });
 
-        // Close lightbox on Escape key
+        // Keep keyboard focus inside whichever dialog is open.
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-                lightbox.classList.remove('active');
+                closeLightbox();
+                return;
+            }
+
+            if (lightbox.classList.contains('active') && e.key === 'Tab') {
+                e.preventDefault();
+                lightboxClose.focus();
+                return;
+            }
+
+            if (modal.classList.contains('active')) {
+                if (e.key === 'Escape') {
+                    showGallery();
+                    return;
+                }
+
+                if (e.key === 'Tab') {
+                    const first = serviceLinks[0];
+                    const last = serviceLinks[serviceLinks.length - 1];
+                    if (e.shiftKey && document.activeElement === first) {
+                        e.preventDefault();
+                        last.focus();
+                    } else if (!e.shiftKey && document.activeElement === last) {
+                        e.preventDefault();
+                        first.focus();
+                    }
+                }
             }
         });
     </script>
