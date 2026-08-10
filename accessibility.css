@@ -35,17 +35,17 @@ textarea:focus-visible,
 
 .language-switcher {
     position: fixed;
-    top: 12px;
+    top: 56px;
     right: 12px;
     z-index: 1100;
     display: inline-flex;
     gap: 3px;
     align-items: center;
     padding: 4px;
-    border: 1px solid rgba(255, 255, 255, 0.28);
+    border: 1px solid var(--border-strong, rgba(255, 255, 255, 0.28));
     border-radius: 999px;
-    background: rgba(7, 16, 32, 0.96);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    background: var(--card, rgba(7, 16, 32, 0.96));
+    box-shadow: var(--shadow-sm, 0 10px 30px rgba(0, 0, 0, 0.3));
     font-family: "Open Sans", system-ui, sans-serif;
 }
 
@@ -55,7 +55,7 @@ textarea:focus-visible,
     padding: 7px 9px;
     border: 0;
     border-radius: 999px;
-    color: #fff;
+    color: var(--text, #fff);
     background: transparent;
     font: inherit;
     font-size: 12px;
@@ -65,7 +65,7 @@ textarea:focus-visible,
 }
 
 .language-button:hover {
-    background: rgba(255, 255, 255, 0.14);
+    background: var(--surface, rgba(255, 255, 255, 0.14));
 }
 
 .language-button.is-active {
@@ -96,9 +96,9 @@ textarea:focus-visible,
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 720px) {
     .language-switcher {
-        top: 8px;
+        top: 50px;
         right: 8px;
     }
 

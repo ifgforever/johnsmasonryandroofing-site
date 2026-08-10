@@ -4,6 +4,9 @@
 
     const translations = {
         es: {
+            'Light mode': 'Modo claro',
+            'Dark mode': 'Modo oscuro',
+            'Switch between light and dark mode': 'Cambiar entre modo claro y oscuro',
             'Forty-five years working the same neighborhoods. We are still here when the mortar has to be matched a second time.': 'Cuarenta y cinco años trabajando en los mismos barrios. Seguimos aquí cuando hay que igualar el mortero por segunda vez.',
             'The people who quote your job are the people who do it. Small enough to answer the phone, big enough to strip a roof in a day.': 'Quienes le dan el presupuesto son quienes hacen el trabajo. Suficientemente pequeños para contestar el teléfono y suficientemente grandes para retirar un techo en un día.',
             'A spot repair and a full rebuild are both real answers. We will tell you which one your wall actually needs.': 'Una reparación puntual y una reconstrucción completa son ambas respuestas válidas. Le diremos cuál necesita realmente su pared.',
@@ -361,6 +364,9 @@
             '"They tuckpointed our whole back wall — looks brand new again. Great crew and fair pricing."': '"Rehicieron las juntas de toda la pared trasera y ahora parece nueva. Excelente equipo y precios justos."'
         },
         pl: {
+            'Light mode': 'Tryb jasny',
+            'Dark mode': 'Tryb ciemny',
+            'Switch between light and dark mode': 'Przełącz między trybem jasnym a ciemnym',
             'Forty-five years working the same neighborhoods. We are still here when the mortar has to be matched a second time.': 'Czterdzieści pięć lat pracy w tych samych dzielnicach. Nadal jesteśmy, gdy zaprawę trzeba dobrać po raz drugi.',
             'The people who quote your job are the people who do it. Small enough to answer the phone, big enough to strip a roof in a day.': 'Ci, którzy wyceniają robotę, sami ją wykonują. Na tyle mali, żeby odebrać telefon, i na tyle duzi, żeby zerwać dach w jeden dzień.',
             'A spot repair and a full rebuild are both real answers. We will tell you which one your wall actually needs.': 'Naprawa punktowa i pełna odbudowa to obie realne odpowiedzi. Powiemy, której faktycznie potrzebuje Państwa ściana.',

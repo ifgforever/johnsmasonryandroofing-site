@@ -5,30 +5,27 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Thank You — John's Masonry and Roofing</title>
-    <link rel="icon" type="image/png" href="favicontommy.png">
+    <link rel="icon" type="image/png" href="/favicontommy.png">
     <meta name="description" content="Thank you for contacting John's Masonry and Roofing. We'll get back to you as soon as possible." />
     <meta name="theme-color" content="#1f2937" />
     <meta name="robots" content="noindex, follow" />
 
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap"></noscript>
-
+    <link rel="stylesheet" href="/assets/site.css?v=20260810b">
+    <script>
+        // Blocking on purpose: sets the theme before first paint. See assets/theme.js.
+        (() => {
+            try {
+                const saved = localStorage.getItem('johns-masonry-roofing-theme');
+                if (saved === 'light' || saved === 'dark') {
+                    document.documentElement.dataset.theme = saved;
+                }
+            } catch { /* fall through to the OS preference in CSS */ }
+        })();
+    </script>
     <style>
-        :root {
-            --bg: #0f1724;
-            --accent: #d97706;
-            --muted: #9ca3af;
-            --white: #ffffff;
-            --maxw: 700px;
-        }
-
-        * { box-sizing: border-box; }
-
+        /* This page is a single centred panel; everything else comes from site.css. */
         body {
-            margin: 0;
-            font-family: "Open Sans", system-ui, sans-serif;
-            background: linear-gradient(180deg, #071020 0%, #071726 45%, #0b1220 100%);
-            color: var(--white);
-            line-height: 1.5;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -36,81 +33,50 @@
         }
 
         .wrap {
-            max-width: var(--maxw);
-            margin: 0 auto;
-            padding: 40px 28px;
+            max-width: 700px;
             text-align: center;
+            padding: 40px 28px;
         }
 
         .logo {
             width: 64px;
             height: 64px;
-            border-radius: 8px;
             margin: 0 auto 20px;
-            background: linear-gradient(135deg, #111827, #1f2937);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: Montserrat;
-            font-weight: 700;
-            color: var(--accent);
-            box-shadow: 0 6px 18px rgba(0, 0, 0, .6);
         }
 
         h1 {
-            font-family: Montserrat;
+            font-family: Montserrat, sans-serif;
             font-size: 30px;
             margin: 0 0 16px;
-            color: var(--accent);
+            color: var(--accent-ink);
         }
 
-        p {
-            color: var(--muted);
+        .wrap p {
+            color: var(--text-soft);
             font-size: 16px;
             margin: 0 0 12px;
         }
 
         .ctas {
-            display: flex;
-            gap: 12px;
             justify-content: center;
-            flex-wrap: wrap;
             margin-top: 26px;
         }
 
-        .btn-primary {
-            background: linear-gradient(90deg, var(--accent), #f59e0b);
-            color: #08101a;
-            padding: 14px 22px;
-            border-radius: 10px;
-            font-weight: 700;
-            text-decoration: none;
-            font-family: Montserrat;
-        }
-
-        .btn-ghost {
-            border: 2px solid rgba(255, 255, 255, .08);
-            color: var(--white);
-            padding: 12px 20px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
         footer {
+            border-top: none;
             margin-top: 36px;
-            color: var(--muted);
             font-size: 13px;
         }
     </style>
-    <link rel="stylesheet" href="/accessibility.css?v=20260730">
+    <link rel="stylesheet" href="/accessibility.css?v=20260810b">
     <script src="/accessibility.js?v=20260730" defer></script>
-    <script src="/languages.js?v=20260730" defer></script>
+    <script src="/assets/theme.js?v=20260810b" defer></script>
+    <script src="/languages.js?v=20260810" defer></script>
 </head>
 
 <body>
     <div class="wrap">
-        <div class="logo">JM</div>
+        <div class="logo" aria-hidden="true">JM</div>
         <h1>Thank You!</h1>
         <p>Your request has been received. A member of the John's Masonry and Roofing team will reach out soon to schedule your inspection or estimate.</p>
         <p>Need immediate help? Call us now.</p>
@@ -120,7 +86,7 @@
             <a class="btn-ghost" href="/">Back to Home</a>
         </div>
 
-        <footer>© <span id="year"></span> John's Masonry and Roofing — Serving Chicago & the South Suburbs</footer>
+        <footer>© <span id="year"></span> John's Masonry and Roofing — Serving Chicago &amp; the South Suburbs</footer>
     </div>
 
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>

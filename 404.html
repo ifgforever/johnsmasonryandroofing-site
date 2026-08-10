@@ -11,9 +11,21 @@
     <meta name="theme-color" content="#1f2937" />
 
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap"></noscript>
-    <link rel="stylesheet" href="/assets/site.css?v=20260810">
-    <link rel="stylesheet" href="/accessibility.css?v=20260730">
+    <link rel="stylesheet" href="/assets/site.css?v=20260810b">
+    <script>
+        // Blocking on purpose: sets the theme before first paint. See assets/theme.js.
+        (() => {
+            try {
+                const saved = localStorage.getItem('johns-masonry-roofing-theme');
+                if (saved === 'light' || saved === 'dark') {
+                    document.documentElement.dataset.theme = saved;
+                }
+            } catch { /* fall through to the OS preference in CSS */ }
+        })();
+    </script>
+    <link rel="stylesheet" href="/accessibility.css?v=20260810b">
     <script src="/accessibility.js?v=20260730" defer></script>
+    <script src="/assets/theme.js?v=20260810b" defer></script>
 </head>
 
 <body>
