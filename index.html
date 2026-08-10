@@ -4,719 +4,255 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Welcome — John's Masonry and Roofing</title>
-
-    <link rel="icon" type="image/png" href="favicontommy.png">
-
+    <title>John's Masonry and Roofing — Chicago Masonry &amp; Roofing Since 1981</title>
+    <link rel="icon" type="image/png" href="/favicontommy.png">
     <meta name="description"
-        content="Chicago's trusted local experts for roofing, masonry, and tuckpointing. Choose your service to get started." />
+        content="Forty-five years of masonry and roofing in Chicago and the South Suburbs. Tuckpointing, brick repair, chimneys, concrete, shingle and flat roofs. Free estimates." />
+    <meta name="theme-color" content="#1f2937" />
+    <link rel="canonical" href="https://johnsmasonryandroofing.com/" />
 
-    <!-- Font performance tweaks -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta property="og:title" content="John's Masonry and Roofing — Chicago Masonry &amp; Roofing Since 1981" />
+    <meta property="og:description"
+        content="A six-man crew that has been laying brick and hanging roofs around Chicago for forty-five years. Free estimates on masonry, tuckpointing, chimneys, concrete and roofing." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://johnsmasonryandroofing.com/" />
+    <meta property="og:site_name" content="John's Masonry and Roofing" />
+    <meta property="og:locale" content="en_US" />
+
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "John's Masonry and Roofing",
+    "url": "https://johnsmasonryandroofing.com/",
+    "telephone": "+1-312-485-3837",
+    "email": "info@johnsmasonryandroofing.com",
+    "foundingDate": "1981",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Chicago",
+      "addressRegion": "IL",
+      "addressCountry": "US"
+    },
+    "areaServed": ["Chicago","Oak Lawn","Tinley Park","Orland Park","Blue Island","Harvey","South Holland","Markham"],
+    "description": "Masonry and roofing contractor working in Chicago and the South Suburbs since 1981. Tuckpointing, brick and stone repair, chimney building and repair, lintels, parapet walls, concrete, and shingle, flat and commercial roofing."
+  }
+  </script>
+
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap"></noscript>
-
-    <style>
-        :root {
-            --bg-dark: #0f1724;
-            --accent: #d97706;
-            --white: #fff;
-            --muted: #9ca3af;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            min-height: 100vh;
-            font-family: "Open Sans", sans-serif;
-            color: var(--white);
-            background:
-                linear-gradient(180deg, #071020 0%, #101726 45%, #0b1220 100%),
-                url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            background-blend-mode: overlay;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            padding: 16px;
-            overflow-x: hidden;
-        }
-
-        body.gallery-active {
-            overflow-y: auto;
-        }
-
-        main {
-            width: 100%;
-            transition: opacity 0.5s ease;
-        }
-
-        main.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        h1 {
-            font-family: "Montserrat", sans-serif;
-            font-size: 26px;
-            letter-spacing: 0.5px;
-            color: var(--white);
-            margin: 0;
-        }
-
-        .modal {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.8);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 100;
-        }
-
-        .modal.active {
-            display: flex;
-            animation: fadeIn 0.6s ease;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        .modal-content {
-            background: rgba(15, 23, 36, 0.96);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
-            padding: 32px 24px;
-            max-width: 480px;
-            width: 90%;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, .6);
-        }
-
-        .modal-content h2 {
-            font-family: "Montserrat", sans-serif;
-            color: var(--accent);
-            margin-top: 0;
-            margin-bottom: 8px;
-            font-size: 22px;
-        }
-
-        .modal-content p {
-            color: var(--muted);
-            margin: 0 0 20px;
-            font-size: 14px;
-        }
-
-        .buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-bottom: 8px;
-        }
-
-        a.btn {
-            display: block;
-            text-decoration: none;
-            font-family: "Montserrat", sans-serif;
-            font-weight: 700;
-            padding: 14px;
-            border-radius: 10px;
-            transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
-            font-size: 14px;
-        }
-
-        a.btn.roof {
-            background: linear-gradient(90deg, var(--accent), #f59e0b);
-            color: #08101a;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
-        }
-
-        a.btn.commercial {
-            background: linear-gradient(90deg, #0ea5e9, #06b6d4);
-            color: #08101a;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
-        }
-
-        a.btn.masonry {
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            color: var(--white);
-            background: transparent;
-        }
-
-        a.btn:hover {
-            transform: scale(1.03);
-        }
-
-        .modal-close {
-            margin-top: 6px;
-            background: none;
-            border: none;
-            color: var(--muted);
-            font-size: 12px;
-            cursor: pointer;
-            transition: color 0.2s;
-        }
-
-        .modal-close:hover {
-            text-decoration: underline;
-            color: var(--accent);
-        }
-
-        /* Gallery Section */
-        .gallery-section {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: linear-gradient(180deg, #071020 0%, #071726 45%, #0b1220 100%);
-            z-index: 50;
-            overflow-y: auto;
-            padding: 80px 20px 40px;
-        }
-
-        .gallery-section.active {
-            display: block;
-            animation: fadeIn 0.6s ease;
-        }
-
-        .gallery-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .gallery-header h2 {
-            font-family: "Montserrat", sans-serif;
-            font-size: 32px;
-            color: var(--white);
-            margin: 0 0 12px;
-        }
-
-        .gallery-header p {
-            color: var(--muted);
-            font-size: 16px;
-            margin: 0 0 20px;
-        }
-
-        .back-btn {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: var(--white);
-            padding: 10px 18px;
-            border-radius: 8px;
-            font-family: "Montserrat", sans-serif;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            z-index: 60;
-        }
-
-        .back-btn:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateX(-2px);
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .gallery-item {
-            position: relative;
-            border-radius: 12px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            aspect-ratio: 4/3;
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.02);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .gallery-item .overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-            display: flex;
-            align-items: flex-end;
-            padding: 16px;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .gallery-item:hover .overlay {
-            opacity: 1;
-        }
-
-        .overlay-text {
-            font-family: "Montserrat", sans-serif;
-            font-weight: 600;
-            font-size: 14px;
-            color: var(--white);
-        }
-
-        /* Lightbox */
-        .lightbox {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 200;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .lightbox.active {
-            display: flex;
-            animation: fadeIn 0.3s ease;
-        }
-
-        .lightbox-content {
-            max-width: 90vw;
-            max-height: 90vh;
-            position: relative;
-        }
-
-        .lightbox-content img {
-            max-width: 100%;
-            max-height: 90vh;
-            border-radius: 8px;
-            display: block;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            background: none;
-            border: none;
-            color: var(--white);
-            font-size: 32px;
-            cursor: pointer;
-            padding: 5px 10px;
-        }
-
-        footer {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            color: var(--muted);
-            font-size: 13px;
-            text-align: center;
-            padding: 0 12px;
-        }
-
-        .gallery-section footer {
-            position: relative;
-            margin-top: 60px;
-            transform: none;
-            left: auto;
-        }
-
-        @media (max-width: 600px) {
-            body {
-                background-image:
-                    linear-gradient(180deg, #071020 0%, #101726 45%, #0b1220 100%),
-                    url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=70');
-            }
-
-            h1 {
-                font-size: 20px;
-            }
-
-            .modal-content {
-                padding: 24px 16px;
-            }
-
-            footer {
-                font-size: 12px;
-            }
-
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .gallery-header h2 {
-                font-size: 24px;
-            }
-
-            .gallery-section {
-                padding: 60px 16px 40px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="/assets/site.css?v=20260810">
     <link rel="stylesheet" href="/accessibility.css?v=20260730">
     <script src="/accessibility.js?v=20260730" defer></script>
-    <script src="/languages.js?v=20260730" defer></script>
+    <script src="/languages.js?v=20260810" defer></script>
 </head>
 
 <body>
-    <main id="mainContent" aria-labelledby="page-title">
-        <h1 id="page-title">Welcome to John's Masonry and Roofing</h1>
-    </main>
-
-    <div class="modal" id="serviceModal" role="dialog" aria-modal="true" aria-labelledby="serviceTitle"
-        aria-describedby="serviceDesc" inert>
-        <div class="modal-content">
-            <h2 id="serviceTitle">What type of service are you looking for?</h2>
-            <p id="serviceDesc">Select one to get started:</p>
-            <div class="buttons">
-                <a href="home.html" class="btn roof">Residential Roofing</a>
-                <a href="commercial.html" class="btn commercial">Commercial Roofing</a>
-                <a href="masonry.html" class="btn masonry">Masonry &amp; Tuckpointing</a>
-            </div>
-            <button type="button" class="modal-close" id="modalClose">
-                Not sure yet? Browse our work.
-            </button>
-        </div>
-    </div>
-
-    <!-- Gallery Section -->
-    <div class="gallery-section" id="gallerySection" role="region" aria-labelledby="gallery-heading" tabindex="-1" inert>
-        <button type="button" class="back-btn" id="backBtn">← Back to Services</button>
-
-        <div class="gallery-header">
-            <h2 id="gallery-heading">Our Work</h2>
-            <p>Quality craftsmanship across Chicago & the South Suburbs</p>
-        </div>
-
-        <div class="gallery-grid">
-            <!-- Cement/Concrete Work -->
-            <div class="gallery-item" data-img="assets/cement1.webp">
-                <img data-src="assets/cement1.webp" alt="Commercial concrete work" loading="lazy">
-                <div class="overlay">
-                    <span class="overlay-text">Commercial Concrete Work</span>
+    <div class="wrap">
+        <header>
+            <div class="brand">
+                <div class="logo" aria-hidden="true">JM</div>
+                <div>
+                    <span class="brandname">John's Masonry and Roofing</span>
+                    <div class="tagline">Brick, mortar and roofs since 1981</div>
                 </div>
             </div>
+            <div style="display:flex;align-items:center;gap:20px">
+                <nav class="mainnav" aria-label="Main">
+                    <a href="/roofing" class="nav-link">Roofing</a>
+                    <a href="/masonry" class="nav-link">Masonry</a>
+                    <a href="/tuckpointing" class="nav-link">Tuckpointing</a>
+                    <a href="/chimney-repair" class="nav-link">Chimneys</a>
+                    <a href="/concrete" class="nav-link">Concrete</a>
+                    <a href="/commercial" class="nav-link">Commercial</a>
+                    <a href="/service-area" class="nav-link">Service Area</a>
+                </nav>
+                <div class="phone"><a href="tel:3124853837">Call: 312.485.3837</a></div>
+            </div>
+        </header>
 
-            <div class="gallery-item" data-img="assets/cement2.webp">
-                <img data-src="assets/cement2.webp" alt="Residential driveway pour" loading="lazy">
-                <div class="overlay">
-                    <span class="overlay-text">Residential driveway pour</span>
+        <main id="mainContent">
+            <section class="hero">
+                <div class="hero-left">
+                    <h2>Forty-five years of brick, mortar and roofs on the South Side</h2>
+                    <p class="lede">John's Masonry and Roofing has been working in Chicago and the South Suburbs since
+                        1981. Six men, one crew, no subcontracted strangers showing up at your house. We tuckpoint,
+                        we lay brick, we build chimneys, we pour concrete, and we tear off and replace roofs —
+                        shingle, flat and commercial.</p>
+
+                    <div class="trust">
+                        <div class="badge">
+                            <h3>Since 1981</h3>
+                            <p>Forty-five years working the same neighborhoods. We are still here when the mortar has
+                                to be matched a second time.</p>
+                        </div>
+                        <div class="badge">
+                            <h3>A six-man crew</h3>
+                            <p>The people who quote your job are the people who do it. Small enough to answer the
+                                phone, big enough to strip a roof in a day.</p>
+                        </div>
+                        <div class="badge">
+                            <h3>Built to your budget</h3>
+                            <p>A spot repair and a full rebuild are both real answers. We will tell you which one your
+                                wall actually needs.</p>
+                        </div>
+                    </div>
+
+                    <div class="ctas">
+                        <a class="btn-primary" href="#lead-form">Get a Free Estimate</a>
+                        <a class="btn-ghost" href="tel:3124853837">Call Now</a>
+                    </div>
                 </div>
-            </div>
 
-            <div class="gallery-item" data-img="assets/cement3.webp">
-                <img data-src="assets/cement3.webp" alt="Concrete porch work" loading="lazy">
-                <div class="overlay">
-                    <span class="overlay-text">Porch Concrete Work</span>
+                <aside class="hero-right">
+                    <h3>Request a Free Estimate</h3>
+                    <p class="small">Tell us what you are looking at. Photos help us give you a straight answer
+                        faster.</p>
+
+                    <form id="lead-form" action="https://formsubmit.co/e1f0a174f6505f3be7bfeb5a65c5c7c3" method="POST"
+                        enctype="multipart/form-data">
+                        <input type="hidden" name="_subject" value="New Estimate Request">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://johnsmasonryandroofing.com/thank-you">
+
+                        <div class="field"><label for="name" class="small">Full name</label><input id="name" name="name"
+                                type="text" required placeholder="Jane Doe" /></div>
+                        <div class="field"><label for="phone" class="small">Phone</label><input id="phone" name="phone"
+                                type="tel" required placeholder="(312) 555-1234" /></div>
+                        <div class="field"><label for="address" class="small">Address (approx.)</label><input
+                                id="address" name="address" type="text" required
+                                placeholder="Chicago, IL or neighborhood" /></div>
+                        <div class="field"><label for="details" class="small">Brief description</label><textarea
+                                id="details" name="details" rows="3" required
+                                placeholder="Cracked mortar, leaking roof, chimney work..."></textarea></div>
+                        <div class="field"><label for="photos" class="small">Upload photos (optional)</label><input
+                                id="photos" name="photos" type="file" accept="image/*" multiple /></div>
+
+                        <button type="submit" class="btn-primary" style="padding:12px 14px">Request My Estimate</button>
+                    </form>
+                </aside>
+            </section>
+
+            <section class="block">
+                <h2>What we do</h2>
+                <p>Two trades under one roof. Most of our customers call about one and end up asking about the other,
+                    because the wall and the roof usually fail together.</p>
+
+                <div class="cardgrid">
+                    <div class="card">
+                        <h3><a href="/tuckpointing">Tuckpointing</a></h3>
+                        <p>Grinding out failed mortar joints and repacking them so the wall sheds water again.</p>
+                    </div>
+                    <div class="card">
+                        <h3><a href="/brick-repair">Brick &amp; stone repair</a></h3>
+                        <p>Replacing spalled and cracked brick, rebuilding sections of wall, matching what is there.</p>
+                    </div>
+                    <div class="card">
+                        <h3><a href="/chimney-repair">Chimney repair &amp; new chimneys</a></h3>
+                        <p>Rebuilding crowns and stacks, and building chimneys new from the roofline up.</p>
+                    </div>
+                    <div class="card">
+                        <h3><a href="/lintel-replacement">Lintel replacement</a></h3>
+                        <p>Cutting out rusted steel lintels above windows and doors before they push the brick apart.</p>
+                    </div>
+                    <div class="card">
+                        <h3><a href="/parapet-walls">Parapet walls</a></h3>
+                        <p>The wall above the roofline that nobody looks at until water is coming through the ceiling.</p>
+                    </div>
+                    <div class="card">
+                        <h3><a href="/masonry-waterproofing">Masonry waterproofing</a></h3>
+                        <p>Sealing brick and stone once the joints are sound, so the repair lasts.</p>
+                    </div>
+                    <div class="card">
+                        <h3><a href="/concrete">Concrete &amp; flatwork</a></h3>
+                        <p>Driveways, sidewalks, porches, stairs and slabs, including cutting and removal.</p>
+                    </div>
+                    <div class="card">
+                        <h3><a href="/roofing">Roofing</a></h3>
+                        <p>Tear-offs, new decking, underlayment and shingles, plus flat roofs.</p>
+                    </div>
+                    <div class="card">
+                        <h3><a href="/commercial">Commercial work</a></h3>
+                        <p>Flat commercial roofs and commercial masonry and concrete.</p>
+                    </div>
                 </div>
-            </div>
+            </section>
 
-            <div class="gallery-item" data-img="assets/cement4.webp">
-                <img data-src="assets/cement4.webp" alt="Concrete cutting" loading="lazy">
-                <div class="overlay">
-                    <span class="overlay-text">Professional Concrete Cutting</span>
+            <section class="block">
+                <h2>Recent jobs</h2>
+
+                <div class="jobcard">
+                    <h3>Full roof replacement in Harvey</h3>
+                    <p>We tore the old roof off down to the frame, found the decking was past saving, and replaced it
+                        with new plywood. Underlayment went down over that, then shingles. A tear-off is the only way
+                        to know what the decking underneath is actually doing — shingling over a soft deck buys a
+                        homeowner about two years.</p>
                 </div>
-            </div>
 
-            <div class="gallery-item" data-img="assets/cement5.webp">
-                <img data-src="assets/cement5.webp" alt="Sidewalk installation" loading="lazy">
-                <div class="overlay">
-                    <span class="overlay-text">New Sidewalk Installation</span>
+                <div class="jobcard">
+                    <h3>A house tuckpointed top to bottom</h3>
+                    <p>Not a patch on the worst wall — every elevation, ground to roofline, ground out and repacked.
+                        When mortar has gone that far the piecemeal approach just moves the leak to the next joint, so
+                        we did the whole envelope at once.</p>
                 </div>
-            </div>
 
-            <div class="gallery-item" data-img="assets/cement6.webp">
-                <img data-src="assets/cement6.webp" alt="Residential Driveway" loading="lazy">
-                <div class="overlay">
-                    <span class="overlay-text">Residential Driveway Expansion</span>
+                <div class="jobcard">
+                    <h3>Decking, paint and brick flower beds</h3>
+                    <p>One homeowner had us replace the deck on the back of the house, paint it, and then build brick
+                        flower beds around the property. Different trades in one visit, one crew, one invoice — which
+                        is usually why people keep our number.</p>
                 </div>
-            </div>
+            </section>
 
-            <div class="gallery-item" data-img="assets/cement7.webp">
-                <img data-src="assets/cement7.webp" alt="Concrete repair" loading="lazy">
-                <div class="overlay">
-                    <span class="overlay-text">Concrete Repair Services</span>
+            <section class="block">
+                <h2>Our work</h2>
+                <div class="gallery-grid">
+                    <figure><img src="/assets/bricktuckpointing1.webp" alt="Repointed brick wall with fresh mortar joints" loading="lazy" width="400" height="180">
+                        <figcaption>Brick and tuckpointing</figcaption>
+                    </figure>
+                    <figure><img src="/assets/chimney1.webp" alt="Rebuilt residential brick chimney" loading="lazy" width="400" height="180">
+                        <figcaption>Chimney work</figcaption>
+                    </figure>
+                    <figure><img src="/assets/cement2.webp" alt="Freshly poured residential concrete driveway" loading="lazy" width="400" height="180">
+                        <figcaption>Driveway pour</figcaption>
+                    </figure>
+                    <figure><img src="/assets/cement3.webp" alt="Concrete porch rebuilt in front of a brick home" loading="lazy" width="400" height="180">
+                        <figcaption>Porch concrete</figcaption>
+                    </figure>
+                    <figure><img src="/assets/cement5.webp" alt="New concrete sidewalk section installed" loading="lazy" width="400" height="180">
+                        <figcaption>Sidewalk installation</figcaption>
+                    </figure>
+                    <figure><img src="/assets/commercial2.webp" alt="Commercial flat roof under repair" loading="lazy" width="400" height="180">
+                        <figcaption>Commercial roof</figcaption>
+                    </figure>
                 </div>
-            </div>
+            </section>
 
-
-
-            <!-- Commercial Roofing -->
-            <div class="gallery-item" data-img="assets/commercial1.webp">
-                <img data-src="assets/commercial1.webp" alt="Commercial flat roof" loading="lazy">
-                <div class="overlay">
-                    <span class="overlay-text">Commercial Flat Roof Installation</span>
+            <section class="block">
+                <h2>Where we work</h2>
+                <p>Chicago and the South Suburbs. If you are on the South Side or south of the city, we are probably
+                    already working within a few miles of you this week.</p>
+                <div class="arealist">
+                    <span>Chicago</span><span>Oak Lawn</span><span>Tinley Park</span><span>Orland Park</span><span>Blue
+                        Island</span><span>Harvey</span><span>South Holland</span><span>Markham</span>
                 </div>
-            </div>
-
-            <div class="gallery-item" data-img="assets/commercial2.webp">
-                <img data-src="assets/commercial2.webp" alt="Commercial roof coating" loading="lazy">
-                <div class="overlay">
-                    <span class="overlay-text">Commercial Roof Waterproofing</span>
-                </div>
-            </div>
-
-            <div class="gallery-item" data-img="assets/commercial3.webp">
-                <img data-src="assets/commercial3.webp" alt="TPO roofing installation" loading="lazy">
-                <div class="overlay">
-                    <span class="overlay-text">TPO Roofing System</span>
-                </div>
-            </div>
-
-            <div class="gallery-item" data-img="assets/commercial4.webp">
-                <img data-src="assets/commercial4.webp" alt="Commercial roof repair" loading="lazy">
-                <div class="overlay">
-                    <span class="overlay-text">Commercial Roof Repair</span>
-                </div>
-            </div>
-
-            <div class="gallery-item" data-img="assets/commercial5.webp">
-                <img data-src="assets/commercial5.webp" alt="Flat roof maintenance" loading="lazy">
-                <div class="overlay">
-                    <span class="overlay-text">Flat Roof Maintenance</span>
-                </div>
-            </div>
-
-            <div class="gallery-item" data-img="assets/commercial6.webp">
-                <img data-src="assets/commercial6.webp" alt="Commercial roofing project" loading="lazy">
-                <div class="overlay">
-                    <span class="overlay-text">Large-Scale Commercial Project</span>
-                </div>
-            </div>
-
-            <div class="gallery-item" data-img="assets/commercial7.webp">
-                <img data-src="assets/commercial7.webp" alt="Flat roof installation" loading="lazy">
-                <div class="overlay">
-                    <span class="overlay-text">Commercial Flat Roof System</span>
-                </div>
-            </div>
-
-            <!-- Masonry Work -->
-            <div class="gallery-item" data-img="assets/bricktuckpointing1.webp">
-                <img data-src="assets/bricktuckpointing1.webp" alt="Masonry foundation work" loading="lazy">
-                <div class="overlay">
-                    <span class="overlay-text">Masonry Foundation Repair</span>
-                </div>
-            </div>
-
-            <div class="gallery-item" data-img="assets/chimney1.webp">
-                <img data-src="assets/chimney1.webp" alt="Chimney masonry work" loading="lazy">
-                <div class="overlay">
-                    <span class="overlay-text">Chimney Masonry Work</span>
-                </div>
-            </div>
-        </div>
-
-        <section aria-label="Service Areas" style="max-width:1100px;margin:30px auto 0;padding:20px 28px 0;border-top:1px solid rgba(255,255,255,.08)">
-            <h3 style="font-family:Montserrat;color:var(--accent);font-size:15px;margin:0 0 12px">Service Areas</h3>
-            <div style="display:flex;flex-wrap:wrap;gap:8px 18px">
-                <a href="home.html" style="color:var(--muted);text-decoration:none;font-size:13px;transition:color 0.2s">Roofing in Chicago</a>
-                <a href="masonry.html" style="color:var(--muted);text-decoration:none;font-size:13px;transition:color 0.2s">Masonry in Chicago</a>
-                <a href="roofing-oak-lawn.html" style="color:var(--muted);text-decoration:none;font-size:13px;transition:color 0.2s">Roofing in Oak Lawn</a>
-                <a href="masonry-oak-lawn.html" style="color:var(--muted);text-decoration:none;font-size:13px;transition:color 0.2s">Masonry in Oak Lawn</a>
-                <a href="roofing-tinley-park.html" style="color:var(--muted);text-decoration:none;font-size:13px;transition:color 0.2s">Roofing in Tinley Park</a>
-                <a href="masonry-tinley-park.html" style="color:var(--muted);text-decoration:none;font-size:13px;transition:color 0.2s">Masonry in Tinley Park</a>
-                <a href="roofing-orland-park.html" style="color:var(--muted);text-decoration:none;font-size:13px;transition:color 0.2s">Roofing in Orland Park</a>
-                <a href="masonry-orland-park.html" style="color:var(--muted);text-decoration:none;font-size:13px;transition:color 0.2s">Masonry in Orland Park</a>
-                <a href="roofing-blue-island.html" style="color:var(--muted);text-decoration:none;font-size:13px;transition:color 0.2s">Roofing in Blue Island</a>
-                <a href="masonry-blue-island.html" style="color:var(--muted);text-decoration:none;font-size:13px;transition:color 0.2s">Masonry in Blue Island</a>
-                <a href="roofing-harvey.html" style="color:var(--muted);text-decoration:none;font-size:13px;transition:color 0.2s">Roofing in Harvey</a>
-                <a href="masonry-harvey.html" style="color:var(--muted);text-decoration:none;font-size:13px;transition:color 0.2s">Masonry in Harvey</a>
-                <a href="roofing-south-holland.html" style="color:var(--muted);text-decoration:none;font-size:13px;transition:color 0.2s">Roofing in South Holland</a>
-                <a href="masonry-south-holland.html" style="color:var(--muted);text-decoration:none;font-size:13px;transition:color 0.2s">Masonry in South Holland</a>
-                <a href="roofing-markham.html" style="color:var(--muted);text-decoration:none;font-size:13px;transition:color 0.2s">Roofing in Markham</a>
-                <a href="masonry-markham.html" style="color:var(--muted);text-decoration:none;font-size:13px;transition:color 0.2s">Masonry in Markham</a>
-            </div>
-        </section>
+                <p style="margin-top:14px"><a class="nav-link" href="/service-area">See the full service area →</a></p>
+            </section>
+        </main>
 
         <footer>
-            © <span id="galleryYear"></span> John's Masonry and Roofing — Serving Chicago &amp; the South Suburbs
+            <div>© <span id="year"></span> John's Masonry and Roofing — Chicago &amp; the South Suburbs</div>
+            <div style="margin-top:6px"><a href="tel:3124853837">312.485.3837</a> ·
+                <a href="mailto:info@johnsmasonryandroofing.com">info@johnsmasonryandroofing.com</a>
+            </div>
         </footer>
     </div>
 
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true"
-        aria-label="Enlarged project photo" inert>
-        <div class="lightbox-content">
-            <button type="button" class="lightbox-close" id="lightboxClose"
-                aria-label="Close enlarged project photo">&times;</button>
-            <img id="lightboxImg"
-                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
-                alt="">
-        </div>
+    <div class="callbar" role="region" aria-label="Call now bar">
+        <div>John's Masonry</div>
+        <a href="tel:3124853837">Call: 312.485.3837</a>
     </div>
 
-    
-
-        <footer>
-        © <span id="year"></span> John's Masonry and Roofing — Serving Chicago &amp; the South Suburbs
-    </footer>
-
-    <script>
-        // Dynamic year
-        document.getElementById('year').textContent = new Date().getFullYear();
-        document.getElementById('galleryYear').textContent = new Date().getFullYear();
-
-        const modal = document.getElementById('serviceModal');
-        const closeBtn = document.getElementById('modalClose');
-        const gallerySection = document.getElementById('gallerySection');
-        const mainContent = document.getElementById('mainContent');
-        const backBtn = document.getElementById('backBtn');
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightboxImg');
-        const lightboxClose = document.getElementById('lightboxClose');
-        const serviceLinks = [...modal.querySelectorAll('a, button')];
-        const galleryItems = [...document.querySelectorAll('.gallery-item')];
-        let lightboxReturnFocus = null;
-
-        function showServiceModal() {
-            modal.removeAttribute('inert');
-            modal.classList.add('active');
-            mainContent.setAttribute('inert', '');
-            serviceLinks[0]?.focus();
-        }
-
-        function hideServiceModal() {
-            modal.classList.remove('active');
-            modal.setAttribute('inert', '');
-            mainContent.removeAttribute('inert');
-        }
-
-        function loadGalleryImages() {
-            gallerySection.querySelectorAll('img[data-src]').forEach(image => {
-                if (!image.src) image.src = image.dataset.src;
-            });
-        }
-
-        function showGallery() {
-            hideServiceModal();
-            mainContent.classList.add('hidden');
-            mainContent.setAttribute('inert', '');
-            gallerySection.removeAttribute('inert');
-            gallerySection.classList.add('active');
-            document.body.classList.add('gallery-active');
-            loadGalleryImages();
-            backBtn.focus();
-        }
-
-        function hideGallery() {
-            gallerySection.classList.remove('active');
-            gallerySection.setAttribute('inert', '');
-            mainContent.classList.remove('hidden');
-            mainContent.removeAttribute('inert');
-            document.body.classList.remove('gallery-active');
-        }
-
-        function openLightbox(item) {
-            lightboxReturnFocus = document.activeElement;
-            const preview = item.querySelector('img');
-            lightboxImg.src = item.dataset.img;
-            lightboxImg.alt = preview?.alt || 'Completed project';
-            gallerySection.setAttribute('inert', '');
-            lightbox.removeAttribute('inert');
-            lightbox.classList.add('active');
-            lightboxClose.focus();
-        }
-
-        function closeLightbox() {
-            lightbox.classList.remove('active');
-            lightbox.setAttribute('inert', '');
-            gallerySection.removeAttribute('inert');
-            lightboxImg.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
-            if (lightboxReturnFocus && typeof lightboxReturnFocus.focus === 'function') {
-                lightboxReturnFocus.focus();
-            }
-        }
-
-        // Show modal after 1.5 seconds
-        setTimeout(showServiceModal, 1500);
-
-        // Show gallery when "Browse our work" is clicked
-        closeBtn.addEventListener('click', showGallery);
-
-        // Back to services button
-        backBtn.addEventListener('click', () => {
-            hideGallery();
-            setTimeout(showServiceModal, 300);
-        });
-
-        // Gallery cards work with pointer, keyboard, and screen readers.
-        galleryItems.forEach(item => {
-            const preview = item.querySelector('img');
-            const caption = item.querySelector('.overlay-text')?.textContent?.trim();
-            item.setAttribute('role', 'button');
-            item.setAttribute('tabindex', '0');
-            item.setAttribute('aria-label', `View full image: ${caption || preview?.alt || 'completed project'}`);
-            item.addEventListener('click', () => openLightbox(item));
-            item.addEventListener('keydown', event => {
-                if (event.key === 'Enter' || event.key === ' ') {
-                    event.preventDefault();
-                    openLightbox(item);
-                }
-            });
-        });
-
-        // Close lightbox
-        lightboxClose.addEventListener('click', closeLightbox);
-
-        // Close lightbox on background click
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                closeLightbox();
-            }
-        });
-
-        // Keep keyboard focus inside whichever dialog is open.
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-                closeLightbox();
-                return;
-            }
-
-            if (lightbox.classList.contains('active') && e.key === 'Tab') {
-                e.preventDefault();
-                lightboxClose.focus();
-                return;
-            }
-
-            if (modal.classList.contains('active')) {
-                if (e.key === 'Escape') {
-                    showGallery();
-                    return;
-                }
-
-                if (e.key === 'Tab') {
-                    const first = serviceLinks[0];
-                    const last = serviceLinks[serviceLinks.length - 1];
-                    if (e.shiftKey && document.activeElement === first) {
-                        e.preventDefault();
-                        last.focus();
-                    } else if (!e.shiftKey && document.activeElement === last) {
-                        e.preventDefault();
-                        first.focus();
-                    }
-                }
-            }
-        });
-    </script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 
 </html>

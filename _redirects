@@ -1,0 +1,39 @@
+# The splash page is gone; / is now the real homepage.
+/home                       /                     301
+/home.html                  /                     301
+/index.html                 /                     301
+
+# Retired location pages. These were 14 pages of identical copy with the town
+# name swapped, and Google declined to index most of them. Each now points at
+# the service page that answers the same question properly. Nothing 404s.
+/masonry-blue-island        /masonry              301
+/masonry-blue-island.html   /masonry              301
+/masonry-harvey             /masonry              301
+/masonry-harvey.html        /masonry              301
+/masonry-markham            /masonry              301
+/masonry-markham.html       /masonry              301
+/masonry-oak-lawn           /masonry              301
+/masonry-oak-lawn.html      /masonry              301
+/masonry-orland-park        /masonry              301
+/masonry-orland-park.html   /masonry              301
+/masonry-south-holland      /masonry              301
+/masonry-south-holland.html /masonry              301
+/masonry-tinley-park        /masonry              301
+/masonry-tinley-park.html   /masonry              301
+
+/roofing-blue-island        /roofing              301
+/roofing-blue-island.html   /roofing              301
+/roofing-harvey             /roofing              301
+/roofing-harvey.html        /roofing              301
+/roofing-markham            /roofing              301
+/roofing-markham.html       /roofing              301
+/roofing-oak-lawn           /roofing              301
+/roofing-oak-lawn.html      /roofing              301
+/roofing-orland-park        /roofing              301
+/roofing-orland-park.html   /roofing              301
+/roofing-south-holland      /roofing              301
+/roofing-south-holland.html /roofing              301
+
+# roofing-tinley-park is deliberately NOT redirected. "roofing contractor
+# tinley park" is 90 searches/month at KD 4 — the one location term with real
+# data behind it — so that page was rewritten instead of retired.
