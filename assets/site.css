@@ -425,6 +425,58 @@ section.block li {
     color: var(--muted);
 }
 
+/* Before/after and job sequences. Each figure carries its own stage label so
+   the story reads without the caption having to say "left"/"right" — the grid
+   reflows to one column on a phone. */
+.ba-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    margin-top: 16px;
+}
+
+.ba-grid figure {
+    position: relative;
+    margin: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--card);
+    border: 1px solid var(--border);
+}
+
+.ba-grid img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+.ba-grid figcaption {
+    padding: 10px 12px;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.stage {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(8, 16, 26, .82);
+    color: #fff;
+    font-family: Montserrat, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.stage.is-after {
+    background: var(--accent);
+    color: var(--on-accent);
+}
+
 footer {
     margin: 44px 0 20px;
     color: var(--muted);
