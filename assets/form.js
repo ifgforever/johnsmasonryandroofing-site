@@ -1,19 +1,22 @@
 /* Estimate form: submit and send photos without leaving the site.
  *
- * Progressive enhancement. The <form> keeps its normal action/method, so with
- * JavaScript off it still posts the old way and lands on /thank-you. With JS
- * on, nothing navigates: we POST to FormSubmit's AJAX endpoint and swap in a
- * success panel in place of the form.
+ * IMPORTANT, learned the hard way: FormSubmit's /ajax/ endpoint accepts a
+ * multipart POST, replies 200, emails the text fields — and silently discards
+ * file attachments. Photos arrive nowhere. Attachments only work on the plain
+ * endpoint, which normally navigates the customer off to formsubmit.co.
  *
- * If the AJAX POST fails for any reason we fall back to a native submit rather
- * than dropping the lead. A customer bounced to a third-party page is worse
- * than staying put; a lost enquiry is worse than both.
+ * So the form posts to the PLAIN endpoint, targeted at a hidden iframe. The
+ * files are delivered properly and the page never moves. We can't read the
+ * cross-origin response, so success is signalled by the iframe finishing its
+ * load — which is also what happens on failure, so this trades error detection
+ * for actually delivering the photos. That is the right trade for a lead form.
+ *
+ * With JavaScript off the form still posts normally and lands on /thank-you.
  */
 (() => {
     const form = document.getElementById('lead-form');
     if (!form || !window.fetch || !window.FormData) return;
 
-    const AJAX = 'https://formsubmit.co/ajax/e1f0a174f6505f3be7bfeb5a65c5c7c3';
     const MAX_TOTAL_BYTES = 10 * 1024 * 1024;
 
     /* languages.js snapshots the DOM's text nodes once, before this file runs,
@@ -26,7 +29,6 @@
             attached: (n, mb) => `${n} foto${n === 1 ? '' : 's'} adjunta${n === 1 ? '' : 's'} (${mb} MB)`,
             tooBig: 'Esas fotos superan los 10 MB en total. Quite una o dos y le pediremos el resto por separado.',
             sending: 'Enviando...',
-            fallback: 'Enviando por la vía larga, un momento.',
             successTitle: 'Gracias, lo recibimos.',
             successBody: 'Tenemos sus datos y sus fotos. Nos comunicaremos con usted en breve. Si es urgente, llame al 312.485.3837.'
         },
@@ -36,7 +38,6 @@
             attached: (n, mb) => `Załączono ${n} ${n === 1 ? 'zdjęcie' : 'zdjęć'} (${mb} MB)`,
             tooBig: 'Te zdjęcia łącznie przekraczają 10 MB. Prosimy usunąć jedno lub dwa, a o resztę dopytamy osobno.',
             sending: 'Wysyłanie...',
-            fallback: 'Wysyłamy dłuższą drogą, chwileczkę.',
             successTitle: 'Dziękujemy — wiadomość dotarła.',
             successBody: 'Mamy Państwa dane i zdjęcia. Wkrótce się odezwiemy. W pilnej sprawie prosimy dzwonić: 312.485.3837.'
         },
@@ -46,7 +47,6 @@
             attached: (n, mb) => `${n} photo${n === 1 ? '' : 's'} attached (${mb} MB)`,
             tooBig: 'Those photos add up to more than 10 MB. Please remove one or two and we will follow up for the rest.',
             sending: 'Sending...',
-            fallback: 'Sending the long way round — one moment.',
             successTitle: 'Thanks — that came through.',
             successBody: 'We have your details and your photos. Someone will get back to you shortly. If it is urgent, call 312.485.3837.'
         }
@@ -169,57 +169,46 @@
     status.setAttribute('aria-live', 'polite');
     form.appendChild(status);
 
-    form.addEventListener('submit', async event => {
+    // The postbox the form submits into, so the page itself never navigates.
+    const postbox = document.createElement('iframe');
+    postbox.name = 'jm-postbox';
+    postbox.title = 'Form submission target';
+    postbox.setAttribute('aria-hidden', 'true');
+    postbox.style.cssText = 'position:absolute;width:0;height:0;border:0;left:-9999px';
+    document.body.appendChild(postbox);
+    form.target = postbox.name;
+
+    let submitting = false;
+    postbox.addEventListener('load', () => {
+        // Fires once the POST completes. It also fires on the iframe's initial
+        // about:blank, hence the guard.
+        if (submitting) succeed();
+    });
+
+    form.addEventListener('submit', event => {
         if (totalBytes() > MAX_TOTAL_BYTES) {
             event.preventDefault();
             return;
         }
-        event.preventDefault();
 
-        const payload = new FormData(form);
-        payload.delete(fileInput ? fileInput.name : 'photos');
-        picked.forEach(file => payload.append(fileInput ? fileInput.name : 'photos', file));
+        // Files gathered by drag-and-drop live in `picked`, not on the input.
+        // The native submit only sends what the input holds, so copy them
+        // across before the browser builds the request body.
+        if (fileInput) {
+            const dt = new DataTransfer();
+            picked.forEach(file => dt.items.add(file));
+            fileInput.files = dt.files;
+        }
 
-        const originalLabel = submitButton ? submitButton.textContent : '';
+        submitting = true;
         if (submitButton) {
             submitButton.disabled = true;
             submitButton.textContent = t().sending;
         }
         status.className = 'form-status';
         status.textContent = '';
-
-        try {
-            const response = await fetch(AJAX, {
-                method: 'POST',
-                body: payload,
-                headers: { Accept: 'application/json' }
-            });
-            if (!response.ok) throw new Error('HTTP ' + response.status);
-            succeed();
-        } catch {
-            // Never lose the enquiry: hand it to the browser the old way.
-            if (submitButton) {
-                submitButton.disabled = false;
-                submitButton.textContent = originalLabel;
-            }
-            status.className = 'form-status is-error';
-            status.textContent = t().fallback;
-            form.submit();
-        }
+        // No preventDefault: the browser posts to FormSubmit, into the iframe.
     });
-
-    function paintStrings() {
-        dropText.textContent = t().drop;
-        renderPreviews();
-    }
-
-    if (fileInput) {
-        paintStrings();
-        new MutationObserver(paintStrings).observe(document.documentElement, {
-            attributes: true,
-            attributeFilter: ['data-language']
-        });
-    }
 
     function succeed() {
         const panel = document.createElement('div');
